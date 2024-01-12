@@ -1,6 +1,8 @@
-from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
-from spotify_extractor.settings import CLIENT_ID, CLIENT_SECRET
+from spotipy.oauth2 import SpotifyClientCredentials
+
+from etl.spotify_extractor.settings import CLIENT_ID, CLIENT_SECRET
+
 
 def spotify_client():    
     credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret = CLIENT_SECRET)
