@@ -31,18 +31,18 @@ def extract_and_write(playlist_id):
 if __name__ == "__main__":
 
     playlist_id = "37i9dQZEVXbLRQDuF5jeBp"
-    extract_and_write(playlist_id)
+    # extract_and_write(playlist_id)
 
-    # schedule = IntervalSchedule(interval=10)
-    # parameters = {'playlist_id': playlist_id}
-    # deployment = Deployment.build_from_flow(
-    #     name="new_deployment",
-    #     flow=extract_and_write,
-    #     version=1,
-    #     schedule=schedule,
-    #     is_schedule_active=True,
-    #     work_queue_name="default",
-    #     parameters=parameters,
-    #     entrypoint="./spotify_workflow.py:extract_and_write",
-    # )
-    # deployment.apply(upload=True)
+    schedule = IntervalSchedule(interval=10)
+    parameters = {'playlist_id': playlist_id}
+    deployment = Deployment.build_from_flow(
+        name="new_deployment",
+        flow=extract_and_write,
+        version=1,
+        schedule=schedule,
+        is_schedule_active=True,
+        work_queue_name="default",
+        parameters=parameters,
+        entrypoint="./spotify_workflow.py:extract_and_write",
+    )
+    deployment.apply(upload=True)
