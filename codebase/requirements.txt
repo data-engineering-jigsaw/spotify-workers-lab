@@ -3,3 +3,5 @@ python-dotenv
 pandas
 pytest
 prefect
+sqlalchemy
+psycopg2-binary
