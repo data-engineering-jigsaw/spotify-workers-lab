@@ -4,7 +4,6 @@ from datetime import date
 import pandas as pd
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
-
 from db import engine
 from etl.spotify_extractor.spotify_client import client
 
@@ -66,5 +65,3 @@ def load_to_postgres(df, engine, table_name = 'tracks'):
 def read_sql(query, engine):
     df = pd.DataFrame(engine.connect().execute(text(query)))
     return df
-    
-    
